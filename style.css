@@ -3,7 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
 .cylinder__container {
   color: white;
   display: flex;
@@ -12,21 +19,18 @@
   background-color: #000;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .cylinder__title {
   text-align: center;
+  padding: 0 1rem;
 }
-
-.cylinder__title h1 {
-  font-size: 7em;
+.cylinder__title h2 {
+  font-size: 7rem;
   font-weight: 700;
   margin: 2rem 0;
 }
-
 .cylinder__title p {
   font-size: 1.5rem;
 }
-
 .cylinder {
   height: 25rem;
   display: flex;
@@ -34,12 +38,10 @@
   align-items: center;
   margin: 2rem 0;
 }
-
 .cylinder__wrapper {
   perspective: 3000px;
   position: relative;
 }
-
 .cylinder__inner {
   height: auto;
   position: relative;
@@ -51,24 +53,62 @@
   animation: rotate 5s linear;
   -webkit-animation: rotate 5s linear;
 }
-
 .cylinder__inner img {
-  width: 200px;
   aspect-ratio: 1 / 2;
   position: absolute;
-  /* top: calc(100% + 1rem); */
   transition: transform 1s ease-in;
   -webkit-transition: transform 1s ease-in;
   -moz-transition: transform 1s ease-in;
   -ms-transition: transform 1s ease-in;
   -o-transition: transform 1s ease-in;
 }
-
-@keyframes rotate {
-  from {
-    transform: rotateY(0deg);
+@media (max-width: 579px) {
+  .cylinder {
+    height: 10rem;
+    overflow-x: hidden;
   }
-  to {
-    transform: rotateY(360deg);
+  .cylinder__inner img {
+    width: 70px;
+  }
+  .cylinder__title h2 {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+  .cylinder__title p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 580px) {
+  .cylinder {
+    height: 15rem;
+  }
+  .cylinder__inner img {
+    width: 100px;
+  }
+}
+@media (min-width: 768px) {
+  .cylinder__inner img {
+    width: 120px;
+  }
+}
+@media (min-width: 992px) {
+  .cylinder {
+    height: 20rem;
+  }
+  .cylinder__inner img {
+    width: 150px;
+  }
+}
+@media (min-width: 1024px) {
+  .cylinder {
+    height: 25rem;
+  }
+  .cylinder__inner img {
+    width: 170px;
+  }
+}
+@media (min-width: 1200px) {
+  .cylinder__inner img {
+    width: 200px;
   }
 }

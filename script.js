@@ -3,8 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalImages = images.length;
   const angle = 360 / totalImages;
 
+  const img = document.querySelector(".cylinder__inner img");
+  let imgWidth = window.getComputedStyle(img, null).getPropertyValue("width");
+
   images.forEach((img, index) => {
-    img.style.transform = `rotateY(${index * angle}deg) translateZ(200px)`;
+    img.style.transform = `rotateY(${
+      index * angle
+    }deg) translateZ(${imgWidth})`;
   });
 
   setTimeout(() => {
