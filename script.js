@@ -15,5 +15,5 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.transform = `rotateY(360deg) translateZ(0)`;
       img.style.position = `relative`;
     });
-  }, 4000);
+  }, 3000);
 });

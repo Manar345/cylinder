@@ -28,15 +28,16 @@
 }
 
 .cylinder {
+  height: 25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
-  padding-top: 2rem;
 }
 
 .cylinder__wrapper {
   perspective: 3000px;
+  position: relative;
 }
 
 .cylinder__inner {
@@ -55,6 +56,7 @@
   width: 200px;
   aspect-ratio: 1 / 2;
   position: absolute;
+  /* top: calc(100% + 1rem); */
   transition: transform 1s ease-in;
   -webkit-transition: transform 1s ease-in;
   -moz-transition: transform 1s ease-in;
